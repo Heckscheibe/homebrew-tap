@@ -1,8 +1,9 @@
 cask "simple-simulator-manager" do
-  version "1.4.0"
-  sha256 "7e7ede50aea64d399a425703073bb87b49fe4ce9f258bd40dbe0758ae6547103"
+  version "1.5.0"
+  auto_updates true
+  sha256 "06f33aa300570140e22028e51d41615fe8b662b8af3d59895049230ac68c7c36"
 
-  url "https://github.com/Heckscheibe/SimpleSimulatorManager/releases/download/v#{version}/SimulatorManager.zip"
+  url "https://github.com/Heckscheibe/SimpleSimulatorManager/releases/download/v#{version}/SimulatorManager-#{version}.zip"
   name "Simple Simulator Manager"
   desc "Menu bar tool for inspecting and managing apps on Apple simulators"
   homepage "https://github.com/Heckscheibe/SimpleSimulatorManager"
@@ -15,6 +16,7 @@ cask "simple-simulator-manager" do
   depends_on macos: :sequoia
 
   app "Simulator Manager.app"
+  binary "#{appdir}/Simulator Manager.app/Contents/Helpers/simple-simulator-mcp"
 
   zap trash: [
     "~/Library/Caches/com.nicolashiller.SimpleSimulatorManager",
